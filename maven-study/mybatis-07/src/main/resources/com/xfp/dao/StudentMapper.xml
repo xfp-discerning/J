@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xfp.dao.StudentMapper">
+
+    <resultMap id="studentMap" type="student">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+    </resultMap>
+    <select id="getStudent" resultMap="studentMap">
+        select * from mybatis.student;
+    </select>
+
+    <select id="getStudentTeacher" resultMap="StuTeaMap">
+        select *
+        from mybatis.student;
+    </select>
+    <resultMap id="StuTeaMap" type="student">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <!-- 复杂的属性需要单独处理-->
+<!--        对象 association-->
+<!--        集合 collection-->
+        <association property="teacher" column="tid" javaType="teacher" select="getTeacher"/>
+    </resultMap>
+    <select id="getTeacher" resultType="teacher">
+        select * from mybatis.teacher where id=#{tid}
+    </select>
+
+    <select id="getStudentTeacher2" resultMap="StuTea2Map">
+        select s.id sid,s.name sname,s.tid stid,t.name tname from mybatis.student s,mybatis.teacher t where s.tid=t.id
+    </select>
+    <resultMap id="StuTea2Map" type="student">
+        <result column="sid" property="id"/>
+        <result column="sname" property="name"/>
+        <association property="teacher" javaType="teacher">
+            <result column="tname" property="name"/>
+            <result column="stid" property="id"/>
+        </association>
+    </resultMap>
+</mapper>
