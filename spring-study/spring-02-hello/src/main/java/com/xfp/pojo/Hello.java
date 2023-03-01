@@ -6,10 +6,6 @@ public class Hello {
     public Hello() {
     }
 
-    public String getStr() {
-        return str;
-    }
-
     @Override
     public String toString() {
         return "Hello{" +
@@ -18,6 +14,10 @@ public class Hello {
     }
 
     public Hello(String str) {
+        this.str = str;
+    }
+
+    public void setStr(String str) {
         this.str = str;
     }
 }
