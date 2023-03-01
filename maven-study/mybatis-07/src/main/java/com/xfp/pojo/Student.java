@@ -1,19 +1,16 @@
-package xfp.pojo;
+package com.xfp.pojo;
 
 //@Alias("student")
 public class Student {
     private int id;
-    private String name;
-    //学生需要关联一个老师
-    private Teacher teacher;
 
-    public Student() {
-    }
- 
-    public Student(int id, String name, Teacher teacher) {
-        this.id = id;
-        this.name = name;
-        this.teacher = teacher;
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", tid=" + tid +
+                '}';
     }
 
     public int getId() {
@@ -32,20 +29,24 @@ public class Student {
         this.name = name;
     }
 
-    public Teacher getTeacher() {
-        return teacher;
+    public int getTid() {
+        return tid;
     }
 
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
+    public void setTid(int tid) {
+        this.tid = tid;
     }
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", teacher=" + teacher +
-                '}';
+    public Student(int id, String name, int tid) {
+        this.id = id;
+        this.name = name;
+        this.tid = tid;
     }
+
+    public Student() {
+    }
+
+    private String name;
+    //学生需要关联一个老师
+    private int tid;
 }

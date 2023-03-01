@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <properties resource="db.properties"/>
+    
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+    <typeAliases>
+<!--        <typeAlias type="com.xfp.pojo.User" alias="User"/>-->
+<!--        或者使用下面方式，它的默认别名就是这个类的小写-->
+        <package name="com.xfp.pojo"/>
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+<!--    每一个mapper.XML文件都需要在mybatis的核心配置文件注册，必须要用斜杠-->
+<!--    三种注册方式-->
+<!--    一、<mapper resource="com/xfp/dao/UserMapper.xml"></mapper>-->
+<!--    二、<mapper class="com.xfp.dao.UserMapper"></mapper>-->
+<!--    三、<package name="com.xfp.dao"/>-->
+<!--    后两种方式，要保证接口和xml文件同名，且在一个包下面-->
+<!--    推荐使用第一种，写一个xml文件，注册一个-->
+    <mappers>
+        <mapper resource="com/xfp/dao/UserMapper.xml"></mapper>
+    </mappers>
+</configuration>

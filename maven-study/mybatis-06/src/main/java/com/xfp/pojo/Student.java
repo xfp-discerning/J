@@ -1,5 +1,8 @@
 package com.xfp.pojo;
 
+import org.apache.ibatis.type.Alias;
+
+//@Alias("student")
 public class Student {
     private int id;
     private String name;
@@ -37,5 +40,14 @@ public class Student {
 
     public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", teacher=" + teacher +
+                '}';
     }
 }

@@ -2,6 +2,15 @@ package com.xfp.pojo;
 
 public class Teacher {
     private int id;
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
     private String name;
 
     public int getId() {
