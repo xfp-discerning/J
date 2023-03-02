@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.xfp.pojo.Address">
+        <property name="address" value="重庆"/>
+    </bean>
+    <bean id="student" class="com.xfp.pojo.Student">
+<!--        第一种，普通值注入-->
+        <property name="name" value="xfp"/>
+<!--        第二种，bean注入使用ref-->
+        <property name="address" ref="address"/>
+<!--        第三种，数组注入-->
+        <property name="books">
+            <array>
+                <value>波多</value>
+                <value>三上</value>
+                <value>天使</value>
+                <value>苍井</value>
+            </array>
+        </property>
+<!--        第四种，List注入-->
+        <property name="hobbies">
+            <list>
+                <value>看电影</value>
+                <value>吃饭</value>
+                <value>睡觉</value>
+            </list>
+        </property>
+<!--        第五种，map注入-->
+        <property name="card">
+            <map>
+                <entry key="身份证" value="1234"/>
+                <entry key="银行卡" value="5678"/>
+                <entry key="学生证" value="9012"/>
+            </map>
+        </property>
+<!--        第六种，Set-->
+        <property name="games">
+            <set>
+                <value>LOL</value>
+                <value>CSGO</value>
+                <value>王者荣耀</value>
+            </set>
+        </property>
+        <property name="wife">
+            <null></null>
+        </property>
+        <property name="info">
+            <props>
+                <prop key="学号">S210201118</prop>
+                <prop key="性别">男</prop>
+                <prop key="名字">xfp</prop>
+            </props>
+        </property>
+    </bean>
+</beans>

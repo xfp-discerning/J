@@ -17,6 +17,7 @@ public class Hello {
         this.str = str;
     }
 
+    //核心，实现依赖注入，dependency injection
     public void setStr(String str) {
         this.str = str;
     }

@@ -3,8 +3,13 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
-
+<!--    使用spring来创建对象，在spring中，这些对象叫做bean-->
+<!--    java写法时 类型 变量名 = new 类型();-->
+<!--    Hello hello = new Hello();-->
+<!--    bean = 对象   new Hello();-->
     <bean id="hello" class="com.xfp.pojo.Hello">
+<!--        id 为变量名 class为new的对象-->
+<!--        property相当于给对象的属性设置一个值-->
         <property name="str" value="Hello"/>
         <!-- collaborators and configuration for this bean go here -->
     </bean>
