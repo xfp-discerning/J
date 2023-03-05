@@ -13,14 +13,14 @@
     <bean id="userService" class="com.xfp.service.UserServiceImpl"/>
 
 <!--    方法一：使用原生springAPI接口-->
-<!--    配置AOP-->
-<!--    首先导入aop约束-->
-<!--    <aop:config>-->
-<!--&lt;!&ndash;        切入点；expression表达式execution（修饰词，返回值，类名，方法名，参数）&ndash;&gt;-->
-<!--        <aop:pointcut id="pointcut" expression="execution(* com.xfp.service.UserServiceImpl.*(..))"/>-->
-<!--&lt;!&ndash;        执行环绕增加&ndash;&gt;-->
-<!--        <aop:advisor advice-ref="log" pointcut-ref="pointcut"/>-->
-<!--        <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut"/>-->
+    <!--    配置AOP-->
+    <!--    首先导入aop约束-->
+    <!--    <aop:config>-->
+    <!--&lt;!&ndash;        切入点；expression表达式execution（修饰词，返回值，类名，方法名，参数）&ndash;&gt;-->
+    <!--        <aop:pointcut id="pointcut" expression="execution(* com.xfp.service.UserServiceImpl.*(..))"/>-->
+    <!--&lt;!&ndash;        执行环绕增加&ndash;&gt;-->
+    <!--        <aop:advisor advice-ref="log" pointcut-ref="pointcut"/>-->
+    <!--        <aop:advisor advice-ref="afterLog" pointcut-ref="pointcut"/>-->
 <!--    </aop:config>-->
     <!--===========================================================================================-->
 <!--&lt;!&ndash;    方法二：自定义类&ndash;&gt;-->
