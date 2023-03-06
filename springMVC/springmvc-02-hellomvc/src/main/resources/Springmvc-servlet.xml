@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    localhost:8080/springmvc/hello   springmvc 是服务器站点，hello为控制器-->
+<!--    处理映射器，根据url查找处理器handler，HandlerExecution表示具体的Handler，主要作用是通过url查找控制器hello-->
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+<!--    处理适配器，按照特定的规则执行handler，handler又去执行具体的controller，controller返回modelandview给适配器，适配器传回DispatcherServlet-->
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+<!--    DispatcherServlet调用ViewResolver来解析HandlerAdapter的逻辑视图名，然后将逻辑视图名传回DispatcherServlet，
+然后DispatcherServlet通过解析器解析结果，调用具体的视图，呈现最后结果-->
+<!--    视图解析器：模板引擎Thymeleaf   FreeMarker····-->
+<!--    获取MV的数据、获取MV的视图名、拼接视图名-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="internalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+     </bean>
+
+<!--BeanNameUrlHandlerMapping-->
+    <bean id="/h" class="com.xfp.controller.HelloController"></bean>
+</beans>
