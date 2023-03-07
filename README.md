@@ -19,3 +19,10 @@ bean的生命周期
 servlet的生命周期
 
 springboot的原理
+
+
+
+面试重点：
+java（集合+面向对象概念+多线程基础） jvm基础
+mysql+redis
+计算机网络
