@@ -17,3 +17,5 @@ bean的生命周期
 《设计模式之禅》
 
 servlet的生命周期
+
+springboot的原理
